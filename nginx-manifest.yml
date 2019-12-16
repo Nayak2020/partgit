@@ -1,5 +1,5 @@
 ---
-name: nginxAgain
+name: nginx
 
 releases:
 - name: nginx
@@ -13,7 +13,7 @@ stemcells:
 
 instance_groups:
 - name: nginx
-  instances: 1
+  instances: 3
   azs: [ z1 ]
   vm_type: default
   persistent_disk_type: default
@@ -21,7 +21,9 @@ instance_groups:
   networks:
   - name: mynetwork
     static_ips:
-    - 10.100.155.206
+    - 10.100.155.204
+    - 10.100.155.205
+    - 10.100.155.106
   jobs:
   - name: nginx
     release: nginx
