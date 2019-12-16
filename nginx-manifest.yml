@@ -23,7 +23,7 @@ instance_groups:
     static_ips:
     - 10.100.155.204
     - 10.100.155.205
-    - 10.100.155.106
+    - 10.100.155.206
   jobs:
   - name: nginx
     release: nginx
