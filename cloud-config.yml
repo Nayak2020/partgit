@@ -1,0 +1,44 @@
+azs:
+- name: z1
+  cpi: lab
+  cloud_properties:
+    datacenters:
+    - clusters: [vSAN-Cluster: {}]
+
+vm_types:
+- name: default
+  cloud_properties:
+    cpu: 2
+    ram: 1024
+    disk: 3240
+- name: large
+  cloud_properties:
+    cpu: 2
+    ram: 4096
+    disk: 30_240
+
+disk_types:
+- name: default
+  disk_size: 3000
+- name: large
+  disk_size: 50_000
+
+networks:
+- name: mynetwork
+  type: manual
+  subnets:
+  - range: 10.100.155.0/24
+    gateway: 10.100.155.1
+    reserved: [10.100.155.1-10.100.155.203, 10.100.155.240-10.100.155.254]
+    static: [10.100.155.204-10.100.155.215]
+    az: z1
+    dns: [8.8.8.8]
+    cloud_properties:
+      name: vlan55
+
+compilation:
+  workers: 3
+  reuse_compilation_vms: true
+  az: z1
+  vm_type: large
+  network: mynetwork

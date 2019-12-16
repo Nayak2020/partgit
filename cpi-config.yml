@@ -1,0 +1,16 @@
+cpis:
+- name: lab
+  type: vsphere
+  properties:
+    host: 10.100.155.201
+    user: "administrator@smarshsfo.com"
+    password: P@ssword123
+    datacenters:
+    - clusters:
+      - {vSAN-Cluster: {}}
+      datastore_pattern: ^(datastore2|datastore3|datastoreSSD4|datastoreSSD5)$
+      disk_path: my-bucc2-disk
+      name: Datacenter
+      persistent_datastore_pattern: ^(datastore2|datastore3|datastoreSSD4|datastoreSSD5)$
+      template_folder: BUCC2_Templates
+      vm_folder: BUCC2_VMs
