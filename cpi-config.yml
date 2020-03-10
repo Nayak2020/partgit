@@ -2,9 +2,9 @@ cpis:
 - name: lab
   type: vsphere
   properties:
-    host: 10.100.155.201
-    user: "administrator@smarshsfo.com"
-    password: P@ssword123
+    host: esxi ip
+    user: "esxi user"
+    password: esxi pwd
     datacenters:
     - clusters:
       - {vSAN-Cluster: {}}
